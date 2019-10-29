@@ -12,7 +12,7 @@ class FilterModule(object):
 
     def consecutive_groups(self,data):
         if type(data) == str:
-            iterable = ast.literal_eval(data)
+            data = ast.literal_eval(data)
         groups=[]
         for k,g in groupby(enumerate(data),lambda x:x[0]-x[1]):
             groups.append(list(map(itemgetter(1),g)))
